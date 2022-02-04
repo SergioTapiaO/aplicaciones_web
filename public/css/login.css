@@ -1,0 +1,65 @@
+.main {
+    background-color: #e2e8f0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+
+a{
+    color: white;
+    display:inline-block;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+}
+
+.formulario{
+    border-radius: 10px 10px 10px 10px;
+    background: #24303c;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    text-align: center;
+}
+
+.formulario .cajas{
+    width: 100%;
+    background: #24303c;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom:16px;
+    border: 1px solid #e2e8f0;
+    font-size: 15px;
+    color: white;
+}
+
+.formulario .botones{
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.formulario h2{
+    color: white;
+}
+
+.rojo{
+    color: red;
+    text-align: left;
+}

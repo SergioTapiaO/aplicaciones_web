@@ -1,0 +1,80 @@
+<h5>Medallas por Preguntas:</h5>
+                <div class="col-md-12 mb-1 mt-3">
+                        <div class="row justify-content-around medallas_preguntas">
+                            
+                            <% if(usuario.medallas_p.estudiante > 0){ %>
+                            <div class="card col-2 bronce">
+                                <p><%= usuario.medallas_p.estudiante%> - Estudiante</p>
+                            </div>
+                            <% } %>
+
+                            <% if(usuario.medallas_p.interesante> 0){ %>
+                            <div class="card col-2 bronce">
+                                <p><%= usuario.medallas_p.interesante%> - Pregunta interesante</p>
+                            </div>
+                            <% } %>
+
+                            <% if(usuario.medallas_p.buena > 0){ %>
+                            <div class="card col-2 plata">
+                                <p><%= usuario.medallas_p.buena%> - buena pregunta</p>
+                            </div>
+                            <% } %>
+
+                            <% if(usuario.medallas_p.excelente > 0){ %>
+                            <div class="card col-2 preguntas bg-warning oro">
+                                <p><%= usuario.medallas_p.excelente%> - excelente pregunta</p>
+                            </div>
+                            <% } %>
+                            
+                    </div>
+                </div>
+
+                <h5>Medallas por visitas:</h5>
+                <div class="col-md-12 mb-1 mt-3">
+                        <div class="row justify-content-around medallas_preguntas">
+                            
+                            <% if(usuario.medallas_v.popular > 0){ %>
+                            <div class="card col-2 bronce">
+                                <p><%= usuario.medallas_v.popular%> - Pregunta popular</p>
+                            </div>
+                            <% } %>
+
+                            <% if(usuario.medallas_v.destacada > 0){ %>
+                            <div class="card col-2 plata">
+                                <p><%= usuario.medallas_v.destacada%> - pregunta destacada</p>
+                            </div>
+                            <% } %>
+
+                            <% if(usuario.medallas_v.famosa > 0){ %>
+                            <div class="card col-2 preguntas bg-warning oro">
+                                <p><%= usuario.medallas_v.famosa%> - pregunta famosa</p>
+                            </div>
+                            <% } %>
+                            
+                    </div>
+                </div>
+
+                <h5>Medallas por Respuestas:</h5>
+                <div class="col-md-12 mb-1 mt-3">
+                        <div class="row justify-content-around medallas_preguntas">
+                            
+                            <% if(usuario.medallas_r.interesante > 0){ %>
+                            <div class="card col-2 bronce">
+                                <p><%= usuario.medallas_r.interesante%> - respuesta interesante</p>
+                            </div>
+                            <% } %>
+
+                            <% if(usuario.medallas_r.buena > 0){ %>
+                            <div class="card col-2 plata">
+                                <p><%= usuario.medallas_r.buena%> - buena respuesta</p>
+                            </div>
+                            <% } %>
+
+                            <% if(usuario.medallas_r.excelente > 0){ %>
+                            <div class="card col-2 preguntas bg-warning oro">
+                                <p><%= usuario.medallas_r.excelente%> - excelente respuesta</p>
+                            </div>
+                            <% } %>
+                            
+                        </div>
+                </div>

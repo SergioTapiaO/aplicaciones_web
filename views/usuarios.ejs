@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/usuarios.css">
+    <title>404-Usuarios</title>
+</head>
+<body>
+    <header>
+        <%- include("cabezera") %>
+    </header>
+
+    <h4><%= titulo %></h4>
+
+    <form method="GET" action="/usuarios_por_nombre" class="" id="busqueda_user">
+        <input class="form-control mr-sm-2" type="text" placeholder="Buscar usuario por nombre" name="nombre">
+        <button class="btn btn-success" type="submit">Search</button>
+    </form>
+
+    <div class="album py-4">
+        <div class="container">
+
+            <div class="row">
+
+                <% for(let i = 0; i < users.length;i++) {%>
+                <div class="col-md-2">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top imagen_carta" src="/imagen/<%=users[i].correo%>" alt="imagen de perfil">
+                        <div class="card-body cuerpo_carta">
+                            <a class="link-dark" href="/perfil_usuario?usuario=<%=users[i].correo%>"><b><%=users[i].nombre%></b></a>
+                            <div><%=users[i].reputacion%></div>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

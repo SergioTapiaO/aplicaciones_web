@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/signup.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>404-Sign Up</title>
+
+    <script>
+        $(function(){
+            $("#form_signup").on("submit", function(event){
+                var pass1 = $('#form_signup input[name=clave]').val();
+                var pass2 = $('#form_signup input[name=clave2]').val();
+                if(pass1 === pass2){
+                
+                }
+                else{
+                    $("#rojo").css("display", "block");
+                    event.preventDefault();
+                }
+            })
+          });
+    </script>
+
+</head>
+<body>    
+        <div class="main">
+            <div class="formulario">
+
+                <h2>404 - SIGNUP</h2>
+                <form method="POST" action="/signup" enctype="multipart/form-data" id="form_signup">
+                    <% if(errores && errores.correo){ %>
+                        <div class="rojo"> <%= errores.correo.msg%></div>
+                    <% } %>
+                    <div><input class="cajas" type="email" name="correo" placeholder="correo electronico"></div>
+                    <% if(errores && errores.usuario){ %>
+                        <div class="rojo"> <%= errores.usuario.msg%></div>
+                    <% } %>
+                    <div><input class="cajas" type="text" name="usuario" placeholder="nombre de usuario"></div>
+                    <% if(errores && errores.clave){ %>
+                        <div class="rojo"> <%= errores.clave.msg%></div>
+                    <% } %>
+                    <div><input id="clave1" class="cajas" type="password" name="clave" placeholder="Contraseña"></div>
+                    <div id="rojo">
+                        <p>las contraseñas no coinciden</p>
+                    </div>
+                    <% if(errores && errores.clave2){ %>
+                        <div class="rojo"> <%= errores.clave2.msg%></div>
+                    <% } %>
+                    <div><input id="clave2" class="cajas" type="password" name="clave2" placeholder="Repite la Contraseña"></div>
+                    <div><input class="cajas" type="file" name="imagen" ></div>
+                    <div><input class="botones" id="boton" type="submit" value="Crear Cuenta"></div>
+                </form>
+
+            </div>
+        </div>
+</body>
+</html>

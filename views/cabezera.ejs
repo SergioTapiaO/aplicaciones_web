@@ -1,0 +1,37 @@
+<cabezera>
+    <div class="row justify-content-between header">
+        <!-- izquierda -->
+        <div class="col-2 logo"><h1>404</h1></div>
+
+        <!-- medio -->
+        <div class="col-5 centro">
+
+            <div class="navbar navbar-expand-lg justify-content-around opciones">
+                <a class="navbar-brand text-white" href="/preguntas.html">Preguntas</a>
+                <a class="navbar-brand text-white" href="/preguntas_sin_responder.html">Sin Responder</a>
+                <a class="navbar-brand text-white" href="/usuarios">Usuarios</a>
+            </div>
+            <div class="row busqueda">
+                <form method="GET" action="/buscar">
+                    <input class="col-9" type="search" name="texto">
+                    <button class="btn btn-success">Buscar</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- derecha -->
+        <div class="col-3 user">
+            <div class="imagen">
+                <img src="/imagen/<%=usuario.correo%>" alt="imagen de usuario">
+            </div>
+            <div class="info">
+                <a class="link-light" href="/perfil_usuario?usuario=<%=usuario.correo%>"><%=usuario.nombre%></a>
+                <form method="GET" action="/logout">
+                    <button class="btn btn-primary">Cerrar Sesion</button>
+                </form>
+            </div>
+        </div>
+    </div> 
+
+</cabezera>

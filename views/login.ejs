@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="css/login.css">
+    <title>404-Log In</title>
+</head>
+<body>    
+        <div class="main">
+            <div class="formulario">
+
+                <h2>404 - LOGIN</h2>
+                <form method="POST" action="/login">
+                    <% if(errores && errores.usuario) {%>
+                        <div class="rojo"> <%= errores.usuario.msg%></div>
+                    <% } %>
+                    <div><input class="cajas" type="text" name="usuario" id="nombre" placeholder="ej: pepe@gmail.com"></div>
+                    <% if(errores && errores.clave) {%>
+                        <div class="rojo"> <%= errores.clave.msg%></div>
+                    <% } %>
+                    <div><input class="cajas" type="password" name="clave" id="correo" placeholder="Contraseña"></div>
+                    <div><input class="botones" type="submit" value="Iniciar Sesion"></div>
+                </form>
+                <div><a href="/signup.html">Crear una Cuenta</a></div>
+
+            </div>
+        </div>
+</body>
+</html>

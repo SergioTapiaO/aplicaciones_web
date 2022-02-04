@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link href="bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/formular.css">
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <title>404-Formular Pregunta</title>
+    </head>
+    <body>
+        <header>
+            <%- include("cabezera") %>
+        </header>
+
+        <!-- CUERPO -->
+        <h4>Formular una pregunta</h3>
+        <div class="form-group formulario">
+            <form method="GET" action="/formular_pregunta">
+                <label>Titulo de la pregunta</label>
+                <% if(errores && errores.titulo) {%>
+                    <div class="rojo"> <%= errores.titulo.msg%></div>
+                <% } %>
+                <input type="text" class="form-control" name="titulo">
+
+                <label>Etiquetas</label>
+                <% if(errores && errores.etiquetas) {%>
+                    <div class="rojo"> <%= errores.etiquetas.msg%></div>
+                <% } %>
+                <input type="text" class="form-control" name="etiquetas" placeholder="por ejemplo: @html (este campo es opcional)">
+
+                <div><label>Cuerpo</label></div>
+                <% if(errores && errores.cuerpo) {%>
+                    <div class="rojo"> <%= errores.cuerpo.msg%></div>
+                <% } %>
+                <textarea name="cuerpo" cols="100" rows="4"></textarea>
+                <div><input class="btn btn-primary botons" type="submit" value="Formular Pregunta"></div>
+            </form>
+        </div>
+
+    </body>
+</html>

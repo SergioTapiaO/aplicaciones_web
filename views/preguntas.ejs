@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="favicon.png">
+        <link href="bootstrap/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link rel="stylesheet" href="css/preguntas.css">
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <title>404-Preguntas</title>
+    </head>
+    <body>
+        <header>
+            <%- include("cabezera") %>
+        </header>
+        <h4><%= titulo %></h4>
+        <div class="container contenedor">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Titulo</th>
+                        <th>Etiquetas</th>
+                        <th>Cuerpo</th>
+                        <th>User</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i = 0; i < preguntas.length; i++){ %>
+                        <tr>
+                            <td><%=i + 1%></td>
+                            <td><a class="link-dark" href="/vista_pregunta?id=<%= preguntas[i].id%>"><%=preguntas[i].titulo%></a></td>
+                            <td>
+                                <% preguntas[i].tags.forEach(tag => { %>
+                                    <a class="btn-success" href="/preguntas_etiqueta?tag=<%= tag %>"><%= tag%></a>
+                                <% }) %>
+                            </td>
+                            <% if(preguntas[i].cuerpo.length > 150) {%>
+                                <% preguntas[i].cuerpo = preguntas[i].cuerpo.substring(0, 150) + "..."; %>
+                            <% } %>
+                            <td><%=preguntas[i].cuerpo%></td>
+                            <td><a class="link-dark" href="/perfil_usuario?usuario=<%=preguntas[i].correo_usuario%>"><%=preguntas[i].correo_usuario%></a></td>
+                            <input type="hidden" name="indice" value="<%= i%>">
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container botonFormular">
+            <form method="GET" action="/formular.html">
+                <button class="btn btn-primary text-align-center" type="submit">Formular pregunta</button>
+            </form>
+        </div>
+
+    </body>
+</html>
